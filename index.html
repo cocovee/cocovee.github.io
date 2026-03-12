@@ -1,0 +1,2393 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>次世代型・無在庫ECショップオーナー募集</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --primary-light: #16213e;
+            --accent: #e94560;
+            --accent-light: #ff6b81;
+            --gold: #d4a853;
+            --gold-light: #f0d68a;
+            --blue: #0f3460;
+            --blue-light: #1a5276;
+            --white: #ffffff;
+            --gray-light: #f8f9fa;
+            --text-dark: #1a1a2e;
+            --text-gray: #6c757d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', 'Inter', sans-serif;
+            color: var(--text-dark);
+            background: #f0f0f0;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        @media print {
+            body { background: white; }
+            .page { box-shadow: none !important; margin: 0 !important; }
+            .page + .page { page-break-before: always; }
+            .no-print { display: none !important; }
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 20px auto;
+            background: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        /* ===== COVER PAGE ===== */
+        .cover {
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 30%, #0f3460 60%, #1a1a2e 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 50px;
+            position: relative;
+        }
+
+        .cover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(212,168,83,0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(233,69,96,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(15,52,96,0.3) 0%, transparent 70%);
+        }
+
+        .cover-decoration {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+        }
+
+        .cover-decoration .line {
+            position: absolute;
+            background: linear-gradient(90deg, transparent, rgba(212,168,83,0.3), transparent);
+            height: 1px;
+        }
+
+        .cover-decoration .line:nth-child(1) { top: 15%; left: -10%; width: 60%; transform: rotate(-5deg); }
+        .cover-decoration .line:nth-child(2) { top: 85%; right: -10%; width: 50%; transform: rotate(3deg); }
+        .cover-decoration .line:nth-child(3) { top: 45%; left: 60%; width: 50%; transform: rotate(-15deg); }
+
+        .cover-decoration .circle {
+            position: absolute;
+            border: 1px solid rgba(212,168,83,0.15);
+            border-radius: 50%;
+        }
+
+        .cover-decoration .circle:nth-child(4) { width: 300px; height: 300px; top: -50px; right: -80px; }
+        .cover-decoration .circle:nth-child(5) { width: 200px; height: 200px; bottom: -30px; left: -60px; }
+        .cover-decoration .circle:nth-child(6) { width: 150px; height: 150px; top: 40%; left: 10%; }
+
+        .cover-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cover-badge {
+            display: inline-block;
+            padding: 8px 28px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            font-size: 13px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        .cover-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 30px;
+            position: relative;
+        }
+
+        .cover-icon .diamond {
+            width: 60px;
+            height: 60px;
+            border: 2px solid var(--gold);
+            transform: rotate(45deg);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cover-icon .diamond i {
+            transform: rotate(-45deg);
+            color: var(--gold);
+            font-size: 24px;
+        }
+
+        .cover h1 {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.5;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .cover h1 .highlight {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cover-divider {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 25px auto;
+        }
+
+        .cover h2 {
+            font-size: 16px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.8;
+            max-width: 500px;
+            margin: 0 auto 50px;
+        }
+
+        .cover-features {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .cover-feature {
+            text-align: center;
+        }
+
+        .cover-feature .icon-wrap {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: 1px solid rgba(212,168,83,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            background: rgba(212,168,83,0.08);
+        }
+
+        .cover-feature .icon-wrap i {
+            color: var(--gold);
+            font-size: 20px;
+        }
+
+        .cover-feature span {
+            color: rgba(255,255,255,0.7);
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        .cover-bottom {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .cover-bottom p {
+            color: rgba(255,255,255,0.35);
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+        /* ===== INNER PAGES ===== */
+        .inner-page {
+            padding: 50px 50px;
+            position: relative;
+        }
+
+        .page-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 35px;
+            position: relative;
+        }
+
+        .page-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--blue));
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: 800;
+            border-radius: 12px;
+            margin-right: 18px;
+            flex-shrink: 0;
+        }
+
+        .page-header-text h2 {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.3;
+        }
+
+        .page-header-text p {
+            font-size: 12px;
+            color: var(--text-gray);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        .page-header::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--accent), transparent);
+        }
+
+        .top-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--blue), var(--gold));
+        }
+
+        .side-accent {
+            position: absolute;
+            left: 0;
+            top: 80px;
+            bottom: 80px;
+            width: 4px;
+            background: linear-gradient(180deg, var(--gold), var(--accent), var(--primary));
+            border-radius: 0 2px 2px 0;
+        }
+
+        /* Section styling */
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 30px 0 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            color: var(--accent);
+            font-size: 16px;
+        }
+
+        .section-title .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+
+        /* Problem cards */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .problem-card {
+            background: linear-gradient(135deg, #fff5f5, #fff);
+            border: 1px solid #ffe0e0;
+            border-radius: 12px;
+            padding: 22px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .problem-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .problem-card .icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(233,69,96,0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+
+        .problem-card .icon i {
+            color: var(--accent);
+            font-size: 18px;
+        }
+
+        .problem-card h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .problem-card p {
+            font-size: 12.5px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Solution box */
+        .solution-box {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--blue) 100%);
+            border-radius: 16px;
+            padding: 35px;
+            margin: 25px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .solution-box::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            width: 120px;
+            height: 120px;
+            border: 2px solid rgba(212,168,83,0.2);
+            border-radius: 50%;
+        }
+
+        .solution-box::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            width: 80px;
+            height: 80px;
+            border: 2px solid rgba(233,69,96,0.15);
+            border-radius: 50%;
+        }
+
+        .solution-box .label {
+            display: inline-block;
+            background: rgba(212,168,83,0.2);
+            color: var(--gold);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .solution-box h3 {
+            color: var(--white);
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .solution-box p {
+            color: rgba(255,255,255,0.8);
+            font-size: 13.5px;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .solution-keywords {
+            display: flex;
+            gap: 10px;
+            margin-top: 18px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .solution-keywords span {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: var(--white);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        /* Business model */
+        .model-flow {
+            display: flex;
+            align-items: stretch;
+            gap: 0;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .model-card {
+            flex: 1;
+            background: var(--white);
+            border-radius: 14px;
+            padding: 25px 18px;
+            position: relative;
+            border: 1px solid #e8e8e8;
+            text-align: center;
+        }
+
+        .model-card:nth-child(1) {
+            background: linear-gradient(180deg, #f0f4ff, #fff);
+            border-color: #d0dcf0;
+        }
+
+        .model-card:nth-child(2) {
+            background: linear-gradient(180deg, #fff8f0, #fff);
+            border-color: #f0dcc0;
+            margin: 0 30px;
+        }
+
+        .model-card:nth-child(3) {
+            background: linear-gradient(180deg, #f0fff4, #fff);
+            border-color: #c0f0d0;
+        }
+
+        .model-card .card-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 14px;
+            font-size: 22px;
+        }
+
+        .model-card:nth-child(1) .card-icon {
+            background: linear-gradient(135deg, #1a5276, #0f3460);
+            color: white;
+        }
+
+        .model-card:nth-child(2) .card-icon {
+            background: linear-gradient(135deg, #d4a853, #c49340);
+            color: white;
+        }
+
+        .model-card:nth-child(3) .card-icon {
+            background: linear-gradient(135deg, #27ae60, #1e8449);
+            color: white;
+        }
+
+        .model-card h4 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .model-card p {
+            font-size: 12px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        .flow-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gold);
+            font-size: 20px;
+            z-index: 2;
+        }
+
+        .flow-arrow:first-of-type { left: calc(33.3% + 2px); }
+        .flow-arrow:last-of-type { left: calc(66.6% + 2px); }
+
+        /* Revenue formula */
+        .revenue-box {
+            background: linear-gradient(135deg, #fffbf0, #fff8e8);
+            border: 2px solid var(--gold);
+            border-radius: 14px;
+            padding: 25px 30px;
+            text-align: center;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .revenue-box .tag {
+            position: absolute;
+            top: -12px;
+            left: 30px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--primary);
+            padding: 4px 18px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .revenue-formula {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.6;
+            margin-top: 5px;
+        }
+
+        .revenue-formula .profit {
+            color: var(--accent);
+            font-size: 22px;
+        }
+
+        .revenue-formula .equals {
+            color: var(--gold);
+            font-size: 24px;
+            margin: 0 5px;
+        }
+
+        .revenue-formula .minus {
+            color: var(--text-gray);
+            margin: 0 3px;
+        }
+
+        /* Merit cards */
+        .merit-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin: 20px 0;
+        }
+
+        .merit-card {
+            background: var(--white);
+            border-radius: 14px;
+            padding: 25px;
+            border: 1px solid #eee;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .merit-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+        }
+
+        .merit-card:nth-child(1)::after { background: linear-gradient(90deg, #e94560, #ff6b81); }
+        .merit-card:nth-child(2)::after { background: linear-gradient(90deg, #d4a853, #f0d68a); }
+        .merit-card:nth-child(3)::after { background: linear-gradient(90deg, #0f3460, #1a5276); }
+        .merit-card:nth-child(4)::after { background: linear-gradient(90deg, #27ae60, #2ecc71); }
+
+        .merit-card .merit-num {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 48px;
+            font-weight: 900;
+            color: rgba(0,0,0,0.04);
+            line-height: 1;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .merit-card .merit-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 14px;
+            font-size: 20px;
+        }
+
+        .merit-card:nth-child(1) .merit-icon { background: rgba(233,69,96,0.1); color: var(--accent); }
+        .merit-card:nth-child(2) .merit-icon { background: rgba(212,168,83,0.15); color: var(--gold); }
+        .merit-card:nth-child(3) .merit-icon { background: rgba(15,52,96,0.1); color: var(--blue); }
+        .merit-card:nth-child(4) .merit-icon { background: rgba(39,174,96,0.1); color: #27ae60; }
+
+        .merit-card h4 {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .merit-card p {
+            font-size: 12px;
+            color: var(--text-gray);
+            line-height: 1.75;
+        }
+
+        /* Steps */
+        .steps-container {
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 22px;
+            margin-bottom: 0;
+            position: relative;
+            padding-bottom: 35px;
+        }
+
+        .step-item:last-child { padding-bottom: 0; }
+
+        .step-line {
+            position: absolute;
+            left: 30px;
+            top: 62px;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--gold), rgba(212,168,83,0.2));
+        }
+
+        .step-item:last-child .step-line { display: none; }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            min-width: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--white);
+            position: relative;
+            z-index: 2;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .step-item:nth-child(1) .step-number { background: linear-gradient(135deg, #e94560, #ff6b81); }
+        .step-item:nth-child(2) .step-number { background: linear-gradient(135deg, #d4a853, #f0d68a); color: var(--primary); }
+        .step-item:nth-child(3) .step-number { background: linear-gradient(135deg, #0f3460, #1a5276); }
+
+        .step-content {
+            flex: 1;
+            background: var(--white);
+            border-radius: 14px;
+            padding: 22px 25px;
+            border: 1px solid #eee;
+            position: relative;
+        }
+
+        .step-content::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 20px;
+            width: 16px;
+            height: 16px;
+            background: var(--white);
+            border-left: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            transform: rotate(45deg);
+        }
+
+        .step-content h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .step-content p {
+            font-size: 13px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Support section */
+        .support-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+            margin: 25px 0;
+        }
+
+        .support-card {
+            text-align: center;
+            padding: 28px 18px;
+            border-radius: 14px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .support-card:nth-child(1) {
+            background: linear-gradient(180deg, var(--primary), var(--blue));
+        }
+        .support-card:nth-child(2) {
+            background: linear-gradient(180deg, #b7791f, #d4a853);
+        }
+        .support-card:nth-child(3) {
+            background: linear-gradient(180deg, #c0392b, #e94560);
+        }
+
+        .support-card::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 80px;
+            height: 80px;
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .support-card .support-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 14px;
+        }
+
+        .support-card .support-icon i {
+            color: white;
+            font-size: 22px;
+        }
+
+        .support-card h4 {
+            color: white;
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .support-card p {
+            color: rgba(255,255,255,0.85);
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        /* Closing page */
+        .closing-page {
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 40%, #0f3460 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 50px;
+            position: relative;
+        }
+
+        .closing-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 40%, rgba(212,168,83,0.12) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(233,69,96,0.08) 0%, transparent 50%);
+        }
+
+        .closing-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .closing-icon-row {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 35px;
+        }
+
+        .closing-icon-row .c-icon {
+            width: 50px;
+            height: 50px;
+            border: 1px solid rgba(212,168,83,0.3);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(212,168,83,0.05);
+        }
+
+        .closing-icon-row .c-icon i {
+            color: var(--gold);
+            font-size: 20px;
+        }
+
+        .closing-content h2 {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .closing-content h2 .gold {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .closing-divider {
+            width: 60px;
+            height: 2px;
+            background: var(--gold);
+            margin: 20px auto;
+        }
+
+        .closing-content .subtitle {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+            margin-bottom: 45px;
+            line-height: 1.7;
+        }
+
+        .contact-grid {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-item {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 14px;
+            padding: 28px 35px;
+            text-align: center;
+            min-width: 180px;
+        }
+
+        .contact-item i {
+            font-size: 28px;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+
+        .contact-item h4 {
+            color: rgba(255,255,255,0.5);
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .contact-item p {
+            color: var(--white);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .qr-placeholder {
+            width: 120px;
+            height: 120px;
+            border: 2px dashed rgba(212,168,83,0.4);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .qr-placeholder i {
+            color: rgba(212,168,83,0.5);
+            font-size: 30px;
+        }
+
+        .qr-placeholder span {
+            color: rgba(255,255,255,0.4);
+            font-size: 11px;
+        }
+
+        .closing-footer {
+            position: absolute;
+            bottom: 25px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .closing-footer p {
+            color: rgba(255,255,255,0.25);
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+
+        /* Utility */
+        .bg-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            opacity: 0.03;
+            background: repeating-linear-gradient(
+                45deg,
+                var(--primary) 0px,
+                var(--primary) 2px,
+                transparent 2px,
+                transparent 12px
+            );
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 15px;
+            left: 50px;
+            right: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+
+        .page-footer span {
+            font-size: 10px;
+            color: #bbb;
+            letter-spacing: 1px;
+        }
+
+
+        /* Visual imagery placeholders with CSS art */
+        .visual-banner {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            border: 1px solid #dee2e6;
+        }
+
+        .visual-banner .visual-icons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .visual-banner .v-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: white;
+        }
+
+        .visual-banner .v-icon:nth-child(1) { background: linear-gradient(135deg, #667eea, #764ba2); }
+        .visual-banner .v-icon:nth-child(2) { background: linear-gradient(135deg, #f093fb, #f5576c); }
+        .visual-banner .v-icon:nth-child(3) { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+
+        .visual-banner .visual-text h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .visual-banner .visual-text p {
+            font-size: 12px;
+            color: var(--text-gray);
+        }
+
+        /* Stats bar */
+        .stats-bar {
+            display: flex;
+            justify-content: space-around;
+            background: linear-gradient(135deg, var(--primary), var(--blue));
+            border-radius: 12px;
+            padding: 22px 15px;
+            margin: 20px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item .stat-value {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .stat-item .stat-label {
+            font-size: 11px;
+            color: rgba(255,255,255,0.6);
+            margin-top: 3px;
+        }
+
+        .stat-divider {
+            width: 1px;
+            background: rgba(255,255,255,0.15);
+        }
+
+        /* ===== PHOTO COMPONENTS ===== */
+
+        /* Cover hero background image */
+        .cover-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+        }
+
+        .cover-bg-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.18;
+            filter: brightness(0.7);
+        }
+
+        /* Full-width photo banner */
+        .photo-banner {
+            width: 100%;
+            border-radius: 14px;
+            overflow: hidden;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .photo-banner img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .photo-banner.tall img {
+            height: 220px;
+        }
+
+        .photo-banner.short img {
+            height: 140px;
+        }
+
+        .photo-banner .photo-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 25px;
+            background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, transparent 100%);
+        }
+
+        .photo-banner .photo-overlay h4 {
+            color: white;
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+
+        .photo-banner .photo-overlay p {
+            color: rgba(255,255,255,0.8);
+            font-size: 12px;
+        }
+
+        /* Team photo grid */
+        .team-photo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .team-photo-item {
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .team-photo-item img {
+            width: 100%;
+            height: 130px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .team-photo-item .photo-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 8px 12px;
+            background: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, transparent 100%);
+            color: white;
+            font-size: 11px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* Side-by-side photo + text */
+        .photo-text-row {
+            display: flex;
+            gap: 20px;
+            align-items: stretch;
+            margin: 20px 0;
+        }
+
+        .photo-text-row .photo-side {
+            flex: 0 0 45%;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+
+        .photo-text-row .photo-side img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            min-height: 160px;
+        }
+
+        .photo-text-row .text-side {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        .photo-text-row .text-side h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .photo-text-row .text-side p {
+            font-size: 12.5px;
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+
+        .photo-text-row .text-side .highlight-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--primary);
+            padding: 3px 12px;
+            border-radius: 15px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        /* Dual photo row */
+        .dual-photo-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin: 20px 0;
+        }
+
+        .dual-photo-item {
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .dual-photo-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .dual-photo-item .photo-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 12px 16px;
+            background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, transparent 100%);
+        }
+
+        .dual-photo-item .photo-caption h5 {
+            color: white;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .dual-photo-item .photo-caption p {
+            color: rgba(255,255,255,0.75);
+            font-size: 11px;
+            margin-top: 2px;
+        }
+
+        /* Closing page team image */
+        .closing-team-banner {
+            width: 80%;
+            max-width: 420px;
+            border-radius: 14px;
+            overflow: hidden;
+            margin: 0 auto 30px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+            border: 2px solid rgba(212,168,83,0.3);
+        }
+
+        .closing-team-banner img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Image badge overlay */
+        .img-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(212,168,83,0.9);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* ========== 移动端响应式设计 ========== */
+        @media screen and (max-width: 768px) {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .page {
+                width: 100%;
+                min-height: auto;
+                margin: 0;
+                padding: 20px 15px;
+                box-shadow: none;
+            }
+
+            /* 封面页 */
+            .cover-content h1 {
+                font-size: 28px !important;
+                line-height: 1.3;
+            }
+
+            .cover-content h2 {
+                font-size: 16px !important;
+                line-height: 1.5;
+            }
+
+            .cover-badge {
+                font-size: 10px !important;
+                padding: 6px 15px !important;
+            }
+
+            .cover-features {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .cover-feature {
+                width: 100% !important;
+            }
+
+            /* 标题和文本 */
+            h1 {
+                font-size: 24px !important;
+            }
+
+            h2 {
+                font-size: 20px !important;
+            }
+
+            h3 {
+                font-size: 18px !important;
+            }
+
+            p, li {
+                font-size: 14px !important;
+            }
+
+            /* 网格布局 - 所有多列网格改为单列 */
+            .feature-grid,
+            .benefit-grid,
+            .support-grid,
+            .contact-grid,
+            .problem-grid,
+            .merit-grid,
+            .team-photo-grid,
+            .dual-photo-row {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+
+            /* 业务流程时间轴 - 移动端优化 */
+            .model-flow {
+                flex-direction: column !important;
+                gap: 15px !important;
+            }
+
+            .model-step {
+                width: 100% !important;
+                border-radius: 12px !important;
+            }
+
+            .model-step::after {
+                display: none !important;
+            }
+
+            /* 时间轴布局移动端优化 */
+            div[style*="position: relative; padding: 40px 0;"] {
+                padding: 20px 0 !important;
+            }
+
+            /* 隐藏中央连接线 */
+            div[style*="position: absolute; left: 50%"][style*="width: 3px"] {
+                display: none !important;
+            }
+
+            /* 时间轴步骤容器 */
+            div[style*="display: flex"][style*="margin-bottom: 40px"] {
+                flex-direction: column !important;
+                margin-bottom: 25px !important;
+                gap: 15px !important;
+            }
+
+            /* 步骤数字徽章 */
+            div[style*="width: 80px; height: 80px"][style*="border-radius: 50%"] {
+                width: 60px !important;
+                height: 60px !important;
+                font-size: 20px !important;
+                margin: 0 auto !important;
+                order: -1 !important;
+            }
+
+            /* 步骤内容卡片 */
+            div[style*="flex: 1"][style*="padding-right: 40px"],
+            div[style*="flex: 1"][style*="padding-left: 40px"] {
+                flex: none !important;
+                width: 100% !important;
+                padding: 0 !important;
+                text-align: left !important;
+            }
+
+            /* 步骤内容卡片内部 */
+            div[style*="border-left: 5px solid"],
+            div[style*="border-right: 5px solid"] {
+                border-left: 5px solid var(--gold) !important;
+                border-right: none !important;
+            }
+
+            /* 步骤标题和图标容器 */
+            div[style*="justify-content: flex-end"] {
+                justify-content: flex-start !important;
+                flex-direction: row !important;
+            }
+
+            /* 步骤标题文字对齐 */
+            h4[style*="text-align: right"] {
+                text-align: left !important;
+            }
+
+            /* 步骤描述文字对齐 */
+            p[style*="text-align: right"] {
+                text-align: left !important;
+            }
+
+            /* 图标容器尺寸调整 */
+            div[style*="width: 50px; height: 50px; min-width: 50px"] {
+                width: 45px !important;
+                height: 45px !important;
+                min-width: 45px !important;
+            }
+
+            div[style*="width: 50px; height: 50px; min-width: 50px"] i {
+                font-size: 20px !important;
+            }
+
+            /* STEP 3 重要标签 */
+            div[style*="position: absolute; top: -15px"] {
+                top: -12px !important;
+                right: 15px !important;
+                font-size: 11px !important;
+                padding: 5px 15px !important;
+            }
+
+            /* 图文并排 - 改为垂直排列 */
+            .photo-text-row {
+                flex-direction: column !important;
+                gap: 15px !important;
+            }
+
+            .photo-text-row .photo-side,
+            .photo-text-row .text-side {
+                width: 100% !important;
+            }
+
+            /* 统计栏 */
+            .stats-bar {
+                flex-direction: column !important;
+                gap: 15px !important;
+                padding: 20px !important;
+            }
+
+            .stat-item {
+                width: 100% !important;
+                border-right: none !important;
+                padding: 10px 0 !important;
+            }
+
+            .stat-item:not(:last-child) {
+                border-bottom: 1px solid rgba(255,255,255,0.2);
+            }
+
+            /* 关键词标签 */
+            .solution-keywords {
+                justify-content: center !important;
+            }
+
+            /* 图片 */
+            .visual-banner img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            /* LINE 联系卡片 */
+            .page:last-of-type > div > div[style*="linear-gradient"] {
+                padding: 25px 20px !important;
+                margin-bottom: 20px !important;
+            }
+
+            .page:last-of-type > div > div[style*="linear-gradient"] i.fab.fa-line {
+                font-size: 50px !important;
+            }
+
+            .page:last-of-type > div > div[style*="linear-gradient"] h3 {
+                font-size: 22px !important;
+            }
+
+            .page:last-of-type > div > div[style*="linear-gradient"] img {
+                width: 180px !important;
+                height: 180px !important;
+            }
+
+            .page:last-of-type > div > div[style*="linear-gradient"] a {
+                padding: 14px 30px !important;
+                font-size: 16px !important;
+            }
+
+            .page:last-of-type > div > div[style*="linear-gradient"] a i {
+                font-size: 24px !important;
+            }
+
+            /* 悬浮按钮 */
+            #line-float-btn {
+                width: 55px !important;
+                height: 55px !important;
+                bottom: 20px !important;
+                right: 20px !important;
+            }
+
+            #line-float-btn i {
+                font-size: 28px !important;
+            }
+
+            /* 表格 */
+            table {
+                font-size: 12px !important;
+            }
+
+            table th,
+            table td {
+                padding: 8px 6px !important;
+            }
+
+            /* 时间轴 */
+            .timeline-item {
+                padding-left: 40px !important;
+            }
+
+            .timeline-item::before {
+                left: 10px !important;
+            }
+
+            /* 图标和装饰 */
+            .diamond,
+            .cover-icon {
+                width: 80px !important;
+                height: 80px !important;
+            }
+
+            .diamond i {
+                font-size: 32px !important;
+            }
+
+            /* 间距调整 */
+            .section {
+                margin-bottom: 30px !important;
+            }
+
+            .visual-banner {
+                padding: 20px !important;
+                margin: 15px 0 !important;
+            }
+
+            /* 按钮 */
+            .cta-button,
+            button,
+            a[style*="padding"] {
+                padding: 12px 24px !important;
+                font-size: 14px !important;
+            }
+        }
+
+        /* 超小屏幕 */
+        @media screen and (max-width: 480px) {
+            .page {
+                padding: 15px 10px;
+            }
+
+            .cover-content h1 {
+                font-size: 24px !important;
+            }
+
+            .cover-content h2 {
+                font-size: 14px !important;
+            }
+
+            h2 {
+                font-size: 18px !important;
+            }
+
+            h3 {
+                font-size: 16px !important;
+            }
+
+            .page:last-of-type > div > div[style*="linear-gradient"] img {
+                width: 160px !important;
+                height: 160px !important;
+            }
+
+            #line-float-btn {
+                width: 50px !important;
+                height: 50px !important;
+                bottom: 15px !important;
+                right: 15px !important;
+            }
+
+            #line-float-btn i {
+                font-size: 24px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- ========== PAGE 1: COVER ========== -->
+    <div class="page cover">
+        <div class="cover-bg-image">
+            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80" alt="Corporate Team">
+        </div>
+        <div class="cover-decoration">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+        <div class="cover-content">
+            <div class="cover-badge">次世代型・無在庫ECショップオーナー募集</div>
+            <div class="cover-icon">
+                <div class="diamond">
+                    <i class="fas fa-store"></i>
+                </div>
+            </div>
+            <h1>
+                在庫リスクなし<br>
+                <span class="highlight">PC・スマホ一台で完結する次世代オンラインショップ経営</span>
+            </h1>
+            <div class="cover-divider"></div>
+            <h2>
+                集客・発送・アフターサービスは<br>
+                全て本部が代行します
+            </h2>
+            <div style="margin-top: 25px; padding: 15px 30px; background: rgba(212,168,83,0.15); border-left: 4px solid var(--gold); border-radius: 8px;">
+                <p style="font-size: 16px; color: var(--gold); font-weight: 600; margin: 0;">
+                    <i class="fas fa-check-circle" style="margin-right: 8px;"></i>
+                    あなたは商品を選んで価格を決めるだけ
+                </p>
+            </div>
+            <div class="cover-features">
+                <div class="cover-feature">
+                    <div class="icon-wrap"><i class="fas fa-box-open"></i></div>
+                    <span>在庫ゼロ</span>
+                </div>
+                <div class="cover-feature">
+                    <div class="icon-wrap"><i class="fas fa-shipping-fast"></i></div>
+                    <span>発送代行</span>
+                </div>
+                <div class="cover-feature">
+                    <div class="icon-wrap"><i class="fas fa-headset"></i></div>
+                    <span>サポート完備</span>
+                </div>
+                <div class="cover-feature">
+                    <div class="icon-wrap"><i class="fas fa-chart-line"></i></div>
+                    <span>高収益可能</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- LINE联系按钮 - 封面页 -->
+        <div style="position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%); z-index: 10; width: 90%; max-width: 500px;">
+            <a href="https://line.me/ti/p/LEZfFFMwd2" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 12px; padding: 18px 35px; background: linear-gradient(135deg, #00B900, #00d400); border-radius: 50px; text-decoration: none; box-shadow: 0 8px 25px rgba(0, 185, 0, 0.4); transition: all 0.3s; border: 2px solid rgba(255,255,255,0.3);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 35px rgba(0, 185, 0, 0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0, 185, 0, 0.4)'">
+                <i class="fab fa-line" style="font-size: 28px; color: white;"></i>
+                <span style="color: white; font-size: 16px; font-weight: 700; letter-spacing: 0.5px;">今すぐLINEで相談する</span>
+                <i class="fas fa-arrow-right" style="font-size: 16px; color: white;"></i>
+            </a>
+            <p style="text-align: center; margin-top: 12px; color: rgba(255,255,255,0.7); font-size: 12px;">
+                <i class="fas fa-clock" style="margin-right: 5px;"></i>
+                24時間以内に返信いたします
+            </p>
+        </div>
+        
+        <div class="cover-bottom">
+            <p>CONFIDENTIAL — FOR PROSPECTIVE PARTNERS ONLY</p>
+        </div>
+    </div>
+
+    <!-- ========== PAGE 2: VISION & PROBLEM ========== -->
+    <div class="page inner-page">
+        <div class="top-bar"></div>
+        <div class="side-accent"></div>
+        <div class="bg-pattern"></div>
+
+        <div class="page-header">
+            <div class="page-number">01</div>
+            <div class="page-header-text">
+                <h2>プロジェクトのビジョンと課題分析</h2>
+                <p>VISION & PROBLEM ANALYSIS</p>
+            </div>
+        </div>
+
+        <div class="section-title">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span>現状の課題</span>
+        </div>
+
+        <div class="problem-grid">
+            <div class="problem-card">
+                <div class="icon"><i class="fas fa-lock"></i></div>
+                <h4>高い参入障壁</h4>
+                <p>在庫抱えのリスク、資金回転の遅さ、煩雑な発送作業が新規参入を阻んでいます。</p>
+            </div>
+            <div class="problem-card">
+                <div class="icon"><i class="fas fa-user-slash"></i></div>
+                <h4>集客の難しさ</h4>
+                <p>個人での広告費高騰、一般のお客様へのアプローチ方法の欠如が成長を妨げます。</p>
+            </div>
+        </div>
+
+       
+        <div style="margin: 35px 0; padding: 30px; background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%); border-radius: 15px;">
+            <div style="text-align: center; margin-bottom: 25px;">
+                <h3 style="font-size: 20px; color: var(--primary); margin-bottom: 10px;">
+                    <i class="fas fa-balance-scale" style="margin-right: 10px; color: var(--gold);"></i>
+                    「従来のネット販売」 vs 「私たちのサポートモデル」
+                </h3>
+                <p style="font-size: 14px; color: var(--text-gray);">何が違うのか、一目で分かる比較</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <!-- 传统电商 -->
+                <div style="background: white; padding: 25px; border-radius: 12px; border: 2px solid #ff6b6b; position: relative;">
+                    <div style="position: absolute; top: -12px; left: 20px; background: #ff6b6b; color: white; padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: 700;">
+                        従来のネット販売
+                    </div>
+                    <div style="text-align: center; margin: 20px 0;">
+                        <i class="fas fa-frown" style="font-size: 48px; color: #ff6b6b;"></i>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 15px; padding: 12px; background: #fff5f5; border-radius: 8px;">
+                            <i class="fas fa-times-circle" style="color: #ff6b6b; margin-top: 3px; font-size: 16px;"></i>
+                            <div>
+                                <p style="margin: 0; font-size: 14px; font-weight: 600; color: #d63031;">在庫を抱える</p>
+                                <p style="margin: 5px 0 0 0; font-size: 12px; color: #636e72;">売れ残りリスク・保管費用</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 15px; padding: 12px; background: #fff5f5; border-radius: 8px;">
+                            <i class="fas fa-times-circle" style="color: #ff6b6b; margin-top: 3px; font-size: 16px;"></i>
+                            <div>
+                                <p style="margin: 0; font-size: 14px; font-weight: 600; color: #d63031;">集客に苦労</p>
+                                <p style="margin: 5px 0 0 0; font-size: 12px; color: #636e72;">広告費が高騰・効果不明</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 15px; padding: 12px; background: #fff5f5; border-radius: 8px;">
+                            <i class="fas fa-times-circle" style="color: #ff6b6b; margin-top: 3px; font-size: 16px;"></i>
+                            <div>
+                                <p style="margin: 0; font-size: 14px; font-weight: 600; color: #d63031;">梱包・発送作業</p>
+                                <p style="margin: 5px 0 0 0; font-size: 12px; color: #636e72;">毎日段ボールと格闘</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 10px; padding: 12px; background: #fff5f5; border-radius: 8px;">
+                            <i class="fas fa-times-circle" style="color: #ff6b6b; margin-top: 3px; font-size: 16px;"></i>
+                            <div>
+                                <p style="margin: 0; font-size: 14px; font-weight: 600; color: #d63031;">返品・クレーム対応</p>
+                                <p style="margin: 5px 0 0 0; font-size: 12px; color: #636e72;">精神的ストレス大</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 20px; padding: 15px; background: #ffe0e0; border-radius: 8px;">
+                        <p style="margin: 0; font-size: 13px; color: #d63031; font-weight: 600;">
+                            😰 満頭大汗・疲れ果てる
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- COCOVEE 模式 -->
+                <div style="background: white; padding: 25px; border-radius: 12px; border: 2px solid #00B900; position: relative; box-shadow: 0 4px 15px rgba(0, 185, 0, 0.15);">
+                    <div style="position: absolute; top: -12px; left: 20px; background: linear-gradient(135deg, #00B900, #00d400); color: white; padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: 700;">
+                        私たちのサポートモデル
+                    </div>
+                    <div style="text-align: center; margin: 20px 0;">
+                        <i class="fas fa-smile-beam" style="font-size: 48px; color: #00B900;"></i>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 15px; padding: 12px; background: #f0fff4; border-radius: 8px;">
+                            <i class="fas fa-check-circle" style="color: #00B900; margin-top: 3px; font-size: 16px;"></i>
+                            <div>
+                                <p style="margin: 0; font-size: 14px; font-weight: 600; color: #00B900;">商品を選ぶ</p>
+                                <p style="margin: 5px 0 0 0; font-size: 12px; color: #2d3436;">数万点から好きな商品を選択</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 15px; padding: 12px; background: #f0fff4; border-radius: 8px;">
+                            <i class="fas fa-check-circle" style="color: #00B900; margin-top: 3px; font-size: 16px;"></i>
+                            <div>
+                                <p style="margin: 0; font-size: 14px; font-weight: 600; color: #00B900;">価格を決める</p>
+                                <p style="margin: 5px 0 0 0; font-size: 12px; color: #2d3436;">自由に利益率を設定</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 15px; padding: 12px; background: #f0fff4; border-radius: 8px;">
+                            <i class="fas fa-check-circle" style="color: #00B900; margin-top: 3px; font-size: 16px;"></i>
+                            <div>
+                                <p style="margin: 0; font-size: 14px; font-weight: 600; color: #00B900;">注文を確認</p>
+                                <p style="margin: 5px 0 0 0; font-size: 12px; color: #2d3436;">売れたらスマホで確認</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 10px; padding: 12px; background: #f0fff4; border-radius: 8px;">
+                            <i class="fas fa-check-circle" style="color: #00B900; margin-top: 3px; font-size: 16px;"></i>
+                            <div>
+                                <p style="margin: 0; font-size: 14px; font-weight: 600; color: #00B900;">利益を受け取る</p>
+                                <p style="margin: 5px 0 0 0; font-size: 12px; color: #2d3436;">24時間以内に精算</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 20px; padding: 15px; background: linear-gradient(135deg, #d4f4dd, #c8f2d4); border-radius: 8px;">
+                        <p style="margin: 0; font-size: 13px; color: #00B900; font-weight: 600;">
+                            😊 スマートな運営・ストレスフリー
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 25px; padding: 20px; background: white; border-radius: 10px; border: 2px dashed var(--gold);">
+                <i class="fas fa-arrow-right" style="font-size: 24px; color: var(--gold); margin-right: 10px;"></i>
+                <span style="font-size: 16px; font-weight: 700; color: var(--primary);">
+                    集客・発送・アフターサービスは全て本部が代行
+                </span>
+            </div>
+        </div>
+
+        <div class="section-title" style="margin-top: 30px;">
+            <i class="fas fa-lightbulb"></i>
+            <span>当社のソリューション</span>
+        </div>
+
+        <div class="solution-box">
+            <div class="label">OUR SOLUTION</div>
+            <h3>全方位型EC支援プラットフォーム</h3>
+            <p>「サプライチェーン × プラットフォーム × 集客 × 物流」を一体化した、<br>全方位型EC支援プラットフォームを構築しました。</p>
+            <div class="solution-keywords">
+                <span><i class="fas fa-link" style="margin-right:5px;font-size:11px;"></i> サプライチェーン</span>
+                <span><i class="fas fa-desktop" style="margin-right:5px;font-size:11px;"></i> プラットフォーム</span>
+                <span><i class="fas fa-bullhorn" style="margin-right:5px;font-size:11px;"></i> 集客</span>
+                <span><i class="fas fa-truck" style="margin-right:5px;font-size:11px;"></i> 物流</span>
+            </div>
+        </div>
+
+        <div class="photo-banner">
+            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=80" alt="Business Partnership">
+            <span class="img-badge">Global Network</span>
+            <div class="photo-overlay">
+                <h4>グローバルなサプライチェーンネットワーク</h4>
+                <p>世界中のメーカー・サプライヤーと提携し、高品質な商品を安定供給します。</p>
+            </div>
+        </div>
+
+        <div class="team-photo-grid">
+            <div class="team-photo-item">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80" alt="Team Collaboration">
+                <div class="photo-label">チーム連携</div>
+            </div>
+            <div class="team-photo-item">
+                <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80" alt="Strategy Meeting">
+                <div class="photo-label">戦略会議</div>
+            </div>
+            <div class="team-photo-item">
+                <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80" alt="Professional Team">
+                <div class="photo-label">プロフェッショナル</div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>[サイト名] — B2Bセラー募集</span>
+            <span>02</span>
+        </div>
+    </div>
+
+    <!-- ========== PAGE 3: BUSINESS MODEL ========== -->
+    <div class="page inner-page">
+        <div class="top-bar"></div>
+        <div class="side-accent"></div>
+        <div class="bg-pattern"></div>
+
+        <div class="page-header">
+            <div class="page-number">02</div>
+            <div class="page-header-text">
+                <h2>コアビジネスモデル</h2>
+                <p>CORE BUSINESS MODEL</p>
+            </div>
+        </div>
+
+        <div class="section-title">
+            <i class="fas fa-project-diagram"></i>
+            <span>ビジネスフロー全体像</span>
+        </div>
+
+        <!-- 专业时间轴式业务流程 -->
+        <div style="position: relative; padding: 40px 0;">
+            <!-- 中央连接线 -->
+            <div style="position: absolute; left: 50%; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, var(--gold) 0%, var(--accent) 50%, var(--gold) 100%); transform: translateX(-50%); z-index: 0;"></div>
+            
+            <!-- STEP 1 -->
+            <div style="display: flex; align-items: center; margin-bottom: 40px; position: relative; z-index: 1;">
+                <div style="flex: 1; text-align: right; padding-right: 40px;">
+                    <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 20px rgba(26,26,46,0.1); border-left: 5px solid var(--primary);">
+                        <div style="display: flex; align-items: center; justify-content: flex-end; gap: 12px; margin-bottom: 12px;">
+                            <h4 style="margin: 0; font-size: 18px; color: var(--primary); flex: 1; text-align: right;">会員登録・商品選定</h4>
+                            <div style="width: 50px; height: 50px; min-width: 50px; background: linear-gradient(135deg, var(--primary), var(--blue)); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(26,26,46,0.3); flex-shrink: 0;">
+                                <i class="fas fa-user-plus" style="font-size: 22px; color: white;"></i>
+                            </div>
+                        </div>
+                        <p style="margin: 0; font-size: 14px; color: var(--text-gray); text-align: right;">プラットフォームに登録し、数万点の商品から販売したい商品を選択。販売価格を自由に設定します。</p>
+                    </div>
+                </div>
+                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 900; color: white; box-shadow: 0 6px 20px rgba(212,168,83,0.4); border: 5px solid white; flex-shrink: 0;">01</div>
+                <div style="flex: 1; padding-left: 40px;"></div>
+            </div>
+
+            <!-- STEP 2 -->
+            <div style="display: flex; align-items: center; margin-bottom: 40px; position: relative; z-index: 1;">
+                <div style="flex: 1; padding-right: 40px;"></div>
+                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--accent), var(--accent-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 900; color: white; box-shadow: 0 6px 20px rgba(233,69,96,0.4); border: 5px solid white; flex-shrink: 0;">02</div>
+                <div style="flex: 1; text-align: left; padding-left: 40px;">
+                    <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 20px rgba(233,69,96,0.1); border-right: 5px solid var(--accent);">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                            <div style="width: 50px; height: 50px; min-width: 50px; background: linear-gradient(135deg, var(--accent), var(--accent-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(233,69,96,0.3); flex-shrink: 0;">
+                                <i class="fas fa-shopping-cart" style="font-size: 22px; color: white;"></i>
+                            </div>
+                            <h4 style="margin: 0; font-size: 18px; color: var(--accent); flex: 1;">一般のお客様が購入</h4>
+                        </div>
+                        <p style="margin: 0; font-size: 14px; color: var(--text-gray);">サイトやアプリで一般のお客様が商品を購入。注文が確定します。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 3 - 重要 -->
+            <div style="display: flex; align-items: center; margin-bottom: 40px; position: relative; z-index: 1;">
+                <div style="flex: 1; text-align: right; padding-right: 40px;">
+                    <div style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); padding: 30px; border-radius: 15px; box-shadow: 0 6px 25px rgba(76,175,80,0.25); border: 3px solid #4caf50; position: relative;">
+                        <div style="position: absolute; top: -15px; right: 20px; background: #4caf50; color: white; padding: 6px 20px; border-radius: 25px; font-size: 12px; font-weight: 700; box-shadow: 0 4px 12px rgba(76,175,80,0.4);">
+                            <i class="fas fa-star" style="margin-right: 5px;"></i>重要ポイント
+                        </div>
+                        <div style="display: flex; align-items: center; justify-content: flex-end; gap: 12px; margin-bottom: 12px;">
+                            <h4 style="margin: 0; font-size: 18px; color: #2e7d32; flex: 1; text-align: right;">注文発生後、卸売価格で仕入れを確定</h4>
+                            <div style="width: 50px; height: 50px; min-width: 50px; background: linear-gradient(135deg, #4caf50, #66bb6a); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(76,175,80,0.4); flex-shrink: 0;">
+                                <i class="fas fa-box" style="font-size: 22px; color: white;"></i>
+                            </div>
+                        </div>
+                        <p style="margin: 0 0 15px 0; font-size: 14px; color: #1b5e20; font-weight: 600; text-align: right;">無駄な在庫を持たないため、売れた分だけを仕入れる合理的な仕組みです。</p>
+                        <div style="padding: 12px; background: rgba(255,255,255,0.8); border-radius: 8px; border-left: 4px solid #4caf50; margin-bottom: 12px;">
+                            <p style="margin: 0; font-size: 13px; color: #1b5e20;">
+                                <i class="fas fa-shield-alt" style="margin-right: 6px;"></i>
+                                <strong>在庫リスクゼロ：</strong>注文確定後に本部が卸売価格で商品を確保します
+                            </p>
+                        </div>
+                        <div style="padding: 10px 12px; background: rgba(33, 150, 243, 0.08); border-radius: 8px; border-left: 4px solid #2196f3;">
+                            <p style="margin: 0; font-size: 12px; color: #1565c0; line-height: 1.6;">
+                                <i class="fas fa-lock" style="margin-right: 6px;"></i>
+                                お預かりした仕入れ金は、商品がお客様に届くまでプラットフォームが保証します。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #4caf50, #66bb6a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 900; color: white; box-shadow: 0 6px 20px rgba(76,175,80,0.5); border: 5px solid white; flex-shrink: 0; animation: pulse 2s infinite;">03</div>
+                <div style="flex: 1; padding-left: 40px;"></div>
+            </div>
+
+            <!-- STEP 4 -->
+            <div style="display: flex; align-items: center; margin-bottom: 40px; position: relative; z-index: 1;">
+                <div style="flex: 1; padding-right: 40px;"></div>
+                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #9c27b0, #ba68c8); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 900; color: white; box-shadow: 0 6px 20px rgba(156,39,176,0.4); border: 5px solid white; flex-shrink: 0;">04</div>
+                <div style="flex: 1; text-align: left; padding-left: 40px;">
+                    <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 20px rgba(156,39,176,0.1); border-right: 5px solid #9c27b0;">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                            <div style="width: 50px; height: 50px; min-width: 50px; background: linear-gradient(135deg, #9c27b0, #ba68c8); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(156,39,176,0.3); flex-shrink: 0;">
+                                <i class="fas fa-shipping-fast" style="font-size: 22px; color: white;"></i>
+                            </div>
+                            <h4 style="margin: 0; font-size: 18px; color: #9c27b0; flex: 1;">本部が発送・アフターサービス</h4>
+                        </div>
+                        <p style="margin: 0; font-size: 14px; color: var(--text-gray);">商品の梱包・発送・カスタマーサポートは全て本部が代行。あなたは何もする必要がありません。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 5 -->
+            <div style="display: flex; align-items: center; margin-bottom: 40px; position: relative; z-index: 1;">
+                <div style="flex: 1; text-align: right; padding-right: 40px;">
+                    <div style="background: linear-gradient(135deg, #fff9e6 0%, #fff3d6 100%); padding: 25px; border-radius: 15px; box-shadow: 0 4px 20px rgba(212,168,83,0.2); border-left: 5px solid var(--gold);">
+                        <div style="display: flex; align-items: center; justify-content: flex-end; gap: 12px; margin-bottom: 12px;">
+                            <h4 style="margin: 0; font-size: 18px; color: var(--gold); flex: 1; text-align: right;">利益確定・精算</h4>
+                            <div style="width: 50px; height: 50px; min-width: 50px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(212,168,83,0.4); flex-shrink: 0;">
+                                <i class="fas fa-yen-sign" style="font-size: 22px; color: white;"></i>
+                            </div>
+                        </div>
+                        <p style="margin: 0; font-size: 14px; color: var(--text-gray); text-align: right;">お客様が商品を受け取り後、販売価格と卸売価格の差額があなたの利益として<strong style="color: var(--gold);">24時間以内</strong>に精算されます。</p>
+                    </div>
+                </div>
+                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 900; color: white; box-shadow: 0 6px 20px rgba(212,168,83,0.4); border: 5px solid white; flex-shrink: 0;">05</div>
+                <div style="flex: 1; padding-left: 40px;"></div>
+            </div>
+        </div>
+
+        <div style="text-align:center;margin:25px 0 20px; padding: 20px; background: linear-gradient(135deg, rgba(212,168,83,0.1) 0%, rgba(212,168,83,0.05) 100%); border-radius: 12px;">
+            <i class="fas fa-check-double" style="font-size:28px;color:var(--gold);"></i>
+            <h4 style="margin: 12px 0 8px; color: var(--primary); font-size: 18px;">透明で合理的なビジネスフロー</h4>
+            <p style="font-size:14px;color:var(--text-gray);margin:0;">在庫を持たず、売れた分だけ仕入れる — リスクゼロで高収益を実現</p>
+        </div>
+
+        <div class="section-title">
+            <i class="fas fa-calculator"></i>
+            <span>収益モデル</span>
+        </div>
+
+        <div class="revenue-box">
+            <div class="tag"><i class="fas fa-coins" style="margin-right:5px;"></i> 収益計算式</div>
+            <div class="revenue-formula">
+                <span class="profit">あなたの利益</span>
+                <span class="equals">＝</span>
+                自ら設定した販売価格
+                <span class="minus">－</span>
+                プラットフォーム卸値
+                <span class="minus">－</span>
+                最小限の運営コスト
+            </div>
+        </div>
+
+        <!-- 具体的な収益シミュレーション -->
+        <div style="margin: 30px 0; padding: 30px; background: linear-gradient(135deg, #fff9e6 0%, #fff3d6 100%); border-radius: 15px; border: 2px solid var(--gold); box-shadow: 0 4px 15px rgba(212,168,83,0.2);">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <i class="fas fa-calculator" style="font-size: 32px; color: var(--gold);"></i>
+                <h3 style="margin: 12px 0 8px; color: var(--primary); font-size: 22px;">具体的な収益シミュレーション</h3>
+                <p style="font-size: 14px; color: var(--text-gray);">実際の商品を例に、どれくらい稼げるかを見てみましょう</p>
+            </div>
+            
+            <div style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 2px dashed #e0e0e0;">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--accent), var(--accent-light)); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-headphones" style="font-size: 28px; color: white;"></i>
+                    </div>
+                    <div>
+                        <h4 style="margin: 0 0 5px 0; font-size: 18px; color: var(--primary);">例：人気の Bluetooth イヤホン</h4>
+                        <p style="margin: 0; font-size: 13px; color: var(--text-gray);">トレンド商品の場合</p>
+                    </div>
+                </div>
+                
+                <div style="margin: 20px 0;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #f0f0f0;">
+                        <span style="font-size: 15px; color: var(--text-gray);">プラットフォーム卸売価格</span>
+                        <span style="font-size: 18px; font-weight: 600; color: var(--primary);">5,000円</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #f0f0f0;">
+                        <span style="font-size: 15px; color: var(--text-gray);">あなたの販売価格</span>
+                        <span style="font-size: 18px; font-weight: 600; color: var(--blue);">8,500円</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; background: linear-gradient(135deg, rgba(212,168,83,0.1) 0%, rgba(212,168,83,0.05) 100%); margin-top: 15px; border-radius: 8px; padding-left: 15px; padding-right: 15px;">
+                        <span style="font-size: 16px; font-weight: 700; color: var(--gold);">
+                            <i class="fas fa-arrow-right" style="margin-right: 8px;"></i>一単あたりの利益
+                        </span>
+                        <span style="font-size: 24px; font-weight: 900; color: var(--gold);">3,500円</span>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 25px; padding: 20px; background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-radius: 10px; border-left: 4px solid #2196f3;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+                        <i class="fas fa-chart-line" style="font-size: 20px; color: #1976d2;"></i>
+                        <h4 style="margin: 0; font-size: 16px; color: #1565c0;">月間収益シミュレーション<span style="font-size: 12px; font-weight: 400; margin-left: 8px; opacity: 0.8;">（粗利ベース）</span></h4>
+                    </div>
+                    <div style="display: flex; justify-content: space-around; text-align: center; margin-top: 15px;">
+                        <div>
+                            <p style="margin: 0 0 5px 0; font-size: 13px; color: #1976d2;">1日3単</p>
+                            <p style="margin: 0; font-size: 20px; font-weight: 700; color: #0d47a1;">315,000円</p>
+                            <p style="margin: 5px 0 0 0; font-size: 11px; color: #1976d2;">/ 月（粗利）</p>
+                        </div>
+                        <div style="border-left: 2px solid rgba(25, 118, 210, 0.3); padding-left: 20px;">
+                            <p style="margin: 0 0 5px 0; font-size: 13px; color: #1976d2;">1日5単</p>
+                            <p style="margin: 0; font-size: 20px; font-weight: 700; color: #0d47a1;">525,000円</p>
+                            <p style="margin: 5px 0 0 0; font-size: 11px; color: #1976d2;">/ 月（粗利）</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 20px; padding: 15px; background: rgba(76, 175, 80, 0.1); border-radius: 8px; text-align: center;">
+                    <p style="margin: 0; font-size: 14px; color: #2e7d32; font-weight: 600;">
+                        <i class="fas fa-info-circle" style="margin-right: 6px;"></i>
+                        在庫ゼロ・発送作業ゼロで、この収益を実現できます
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-photo-row">
+            <div class="dual-photo-item">
+                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80" alt="Warehouse Logistics">
+                <div class="photo-caption">
+                    <h5><i class="fas fa-warehouse" style="margin-right:6px;"></i>自動化物流センター</h5>
+                    <p>世界各地の倉庫から迅速に発送</p>
+                </div>
+            </div>
+            <div class="dual-photo-item">
+                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&q=80" alt="Business Handshake">
+                <div class="photo-caption">
+                    <h5><i class="fas fa-handshake" style="margin-right:6px;"></i>信頼のパートナーシップ</h5>
+                    <p>強固なビジネス関係を構築</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-value">0</div>
+                <div class="stat-label">在庫リスク</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <div class="stat-value">100%</div>
+                <div class="stat-label">価格自由設定</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <div class="stat-value">数万点</div>
+                <div class="stat-label">商品ラインナップ</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <div class="stat-value">24/7</div>
+                <div class="stat-label">サポート対応</div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>[サイト名] — B2Bセラー募集</span>
+            <span>03</span>
+        </div>
+    </div>
+
+    <!-- ========== PAGE 4: 4 MERITS ========== -->
+    <div class="page inner-page">
+        <div class="top-bar"></div>
+        <div class="side-accent"></div>
+        <div class="bg-pattern"></div>
+
+        <div class="page-header">
+            <div class="page-number">03</div>
+            <div class="page-header-text">
+                <h2>セラー様の4大メリット</h2>
+                <p>4 KEY BENEFITS FOR SELLERS</p>
+            </div>
+        </div>
+
+        <div class="merit-grid">
+            <div class="merit-card">
+                <div class="merit-num">01</div>
+                <div class="merit-icon"><i class="fas fa-shield-alt"></i></div>
+                <h4>在庫ゼロ・低リスク</h4>
+                <p>事前仕入れは一切不要。注文が入るとシステムが自動でサプライチェーンと連携するため、在庫リスクはゼロ。真の「ライトアセット（軽資産）」経営を実現。</p>
+            </div>
+            <div class="merit-card">
+                <div class="merit-num">02</div>
+                <div class="merit-icon"><i class="fas fa-tags"></i></div>
+                <h4>自由な価格設定</h4>
+                <p>プラットフォームによる強制的な価格制限はありません。市場動向や自身の戦略に合わせ、柔軟に利幅を調整できます。</p>
+            </div>
+            <div class="merit-card">
+                <div class="merit-num">03</div>
+                <div class="merit-icon"><i class="fas fa-cogs"></i></div>
+                <h4>フルオート物流システム</h4>
+                <p>工場や倉庫からお客様へ直接発送。梱包、検品、配送業者とのやり取りに時間を取られることはありません。</p>
+            </div>
+            <div class="merit-card">
+                <div class="merit-num">04</div>
+                <div class="merit-icon"><i class="fas fa-bullseye"></i></div>
+                <h4>強力な集客支援</h4>
+                <p>SNSや検索エンジンを通じて、プラットフォームが継続的に集客を実施。セラー様は商品の選定とショップ運営だけに集中できます。</p>
+            </div>
+        </div>
+
+        <div class="photo-text-row" style="margin-top: 20px;">
+            <div class="photo-side">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80" alt="Business Success Team">
+            </div>
+            <div class="text-side">
+                <span class="highlight-tag"><i class="fas fa-star" style="margin-right:4px;font-size:10px;"></i> LIGHT ASSET MODEL</span>
+                <h4>ライトアセット経営で最大利益を</h4>
+                <p>固定費を最小限に抑え、売上に集中できるビジネスモデルで、効率的な収益化を実現。世界中のセラー様が当プラットフォームで成功を収めています。</p>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>[サイト名] — B2Bセラー募集</span>
+            <span>04</span>
+        </div>
+    </div>
+
+    <!-- ========== PAGE 5: 3 STEPS + SUPPORT ========== -->
+    <div class="page inner-page">
+        <div class="top-bar"></div>
+        <div class="side-accent"></div>
+        <div class="bg-pattern"></div>
+
+        <div class="page-header">
+            <div class="page-number">04</div>
+            <div class="page-header-text">
+                <h2>収益開始までの3ステップ</h2>
+                <p>3 STEPS TO START EARNING</p>
+            </div>
+        </div>
+
+        <div class="steps-container">
+            <div class="step-item">
+                <div class="step-number">1</div>
+                <div class="step-line"></div>
+                <div class="step-content">
+                    <h4><i class="fas fa-user-plus" style="color:var(--accent);margin-right:8px;"></i>登録・入会</h4>
+                    <p>会員登録を行い、セラー専用管理画面の権限を有効化。すぐにビジネスをスタートできます。</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">2</div>
+                <div class="step-line"></div>
+                <div class="step-content">
+                    <h4><i class="fas fa-search-plus" style="color:var(--gold);margin-right:8px;"></i>商品選定・出品</h4>
+                    <p>数万点の厳選商品からお好みのものを選び、希望の販売価格を設定。あなただけのショップが完成。</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h4><i class="fas fa-wallet" style="color:var(--blue);margin-right:8px;"></i>収益獲得</h4>
+                    <p>お客様の購入後、プラットフォームが発送を代行。利益は自動的にあなたのアカウントへ精算されます。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="photo-banner short">
+            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80" alt="E-commerce Success">
+            <span class="img-badge">Easy Start</span>
+            <div class="photo-overlay">
+                <h4>わずか3ステップでビジネスをスタート</h4>
+                <p>複雑な手続きは一切不要。登録から収益化まで、私たちがフルサポートします。</p>
+            </div>
+        </div>
+
+        <div class="page-header" style="margin-top:15px;">
+            <div class="page-number">05</div>
+            <div class="page-header-text">
+                <h2>プラットフォームのサポート体制</h2>
+                <p>PLATFORM SUPPORT SYSTEM</p>
+            </div>
+        </div>
+
+        <div class="support-grid">
+            <div class="support-card">
+                <div class="support-icon"><i class="fas fa-laptop-code"></i></div>
+                <h4>技術サポート</h4>
+                <p>スムーズなアプリ・サイト体験と、プロ仕様のセラー管理システムを提供。</p>
+            </div>
+            <div class="support-card">
+                <div class="support-icon"><i class="fas fa-chart-bar"></i></div>
+                <h4>選品サポート</h4>
+                <p>ビッグデータに基づいた売れ筋ランキングを共有し、市場トレンドキャッチを支援。</p>
+            </div>
+            <div class="support-card">
+                <div class="support-icon"><i class="fas fa-graduation-cap"></i></div>
+                <h4>教育サポート</h4>
+                <p>初心者向け運営マニュアル完備。ショップ最適化のノウハウを徹底伝授。</p>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>[サイト名] — B2Bセラー募集</span>
+            <span>05</span>
+        </div>
+    </div>
+
+    <!-- ========== PAGE 6: CLOSING ========== -->
+    <div class="page closing-page">
+        <div class="cover-decoration">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+        <div class="closing-content">
+            <div class="closing-team-banner">
+                <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=800&q=80" alt="Our Professional Team">
+            </div>
+            <div class="closing-icon-row">
+                <div class="c-icon"><i class="fas fa-handshake"></i></div>
+                <div class="c-icon"><i class="fas fa-chart-line"></i></div>
+                <div class="c-icon"><i class="fas fa-globe-asia"></i></div>
+            </div>
+            <h2>
+                ECの新しいチャンスを掴み、<br>
+                <span class="gold">共に成長しましょう！</span>
+            </h2>
+            <div class="closing-divider"></div>
+            <p class="subtitle">
+                私たちと一緒に、次世代のECビジネスを創造しませんか。<br>
+                今すぐお問い合わせください。
+            </p>
+
+            <!-- LINE 联系方式 -->
+            <div style="background: linear-gradient(135deg, #00B900 0%, #00a000 100%); border-radius: 15px; padding: 40px; margin-bottom: 30px; box-shadow: 0 8px 25px rgba(0, 185, 0, 0.2);">
+                <div style="text-align: center; color: white;">
+                    <i class="fab fa-line" style="font-size: 70px; margin-bottom: 20px;"></i>
+                    <h3 style="font-size: 28px; font-weight: bold; margin-bottom: 15px;">LINEでお問い合わせ</h3>
+                    <p style="font-size: 16px; opacity: 0.95; margin-bottom: 30px;">24時間以内に返信いたします</p>
+                    
+                    <!-- LINE QR码 -->
+                    <div style="margin: 30px auto; display: inline-block; padding: 20px; background: white; border-radius: 15px; box-shadow: 0 6px 20px rgba(0,0,0,0.25);">
+                        <img src="photo_2026-03-11_18-54-14.jpg" alt="LINE QR Code" style="width: 220px; height: 220px; display: block; border-radius: 10px;">
+                    </div>
+                    
+                    <p style="font-size: 15px; opacity: 0.9; margin-bottom: 25px;">上記QRコードをスキャンしてください</p>
+                    
+                    <div style="margin-top: 25px;">
+                        <a href="https://line.me/ti/p/LEZfFFMwd2" target="_blank" style="display: inline-flex; align-items: center; gap: 12px; padding: 18px 40px; background: white; color: #00B900; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 18px; transition: all 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.2)'">
+                            <i class="fab fa-line" style="font-size: 28px;"></i>
+                            <span>今すぐチャット</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 悬浮LINE联系按钮 - 固定在视窗右下角 -->
+    <a href="https://line.me/ti/p/LEZfFFMwd2" target="_blank" id="line-float-btn" style="position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: #00B900; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0, 185, 0, 0.4); z-index: 9999; transition: all 0.3s; text-decoration: none;" onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 6px 20px rgba(0, 185, 0, 0.6)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 12px rgba(0, 185, 0, 0.4)'">
+        <i class="fab fa-line" style="font-size: 32px; color: white;"></i>
+    </a>
+
+    <style>
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        #line-float-btn {
+            animation: pulse 2s infinite;
+        }
+        
+        #line-float-btn:hover {
+            animation: none;
+        }
+        
+        @media print {
+            #line-float-btn {
+                display: none !important;
+            }
+        }
+    </style>
+
+</body>
+</html>
