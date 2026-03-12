@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XHMM941D6H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XHMM941D6H');
+</script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>次世代型・無在庫ECショップオーナー募集</title>
@@ -1513,52 +1523,56 @@
                 height: auto;
             }
 
-            /* LINE 联系卡片 */
-            .page:last-of-type > div > div[style*="linear-gradient"] {
+            /* 独立LINE联系区块 - 移动端优化 */
+            body > div[style*="width: 210mm"][style*="margin: 30px auto"] {
+                width: 100% !important;
+                margin: 20px 0 !important;
                 padding: 25px 20px !important;
-                margin-bottom: 20px !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
             }
 
-            .page:last-of-type > div > div[style*="linear-gradient"] i.fab.fa-line {
-                font-size: 50px !important;
+            body > div[style*="width: 210mm"] h3 {
+                font-size: 20px !important;
             }
 
-            .page:last-of-type > div > div[style*="linear-gradient"] h3 {
-                font-size: 22px !important;
+            body > div[style*="width: 210mm"] p {
+                font-size: 13px !important;
             }
 
-            .page:last-of-type > div > div[style*="linear-gradient"] img {
-                width: 180px !important;
-                height: 180px !important;
+            body > div[style*="width: 210mm"] a {
+                padding: 16px 25px !important;
+                gap: 10px !important;
             }
 
-            .page:last-of-type > div > div[style*="linear-gradient"] a {
-                padding: 14px 30px !important;
+            body > div[style*="width: 210mm"] a i.fab {
+                font-size: 26px !important;
+            }
+
+            body > div[style*="width: 210mm"] a span {
                 font-size: 16px !important;
             }
 
-            .page:last-of-type > div > div[style*="linear-gradient"] a i {
-                font-size: 24px !important;
+            body > div[style*="width: 210mm"] a i.fas {
+                font-size: 16px !important;
             }
 
-            /* 悬浮按钮 */
-            #line-float-btn {
-                width: 55px !important;
-                height: 55px !important;
-                bottom: 20px !important;
-                right: 20px !important;
+            body > div[style*="width: 210mm"] div[style*="display: flex"] {
+                flex-direction: column !important;
+                gap: 10px !important;
             }
 
-            #line-float-btn i {
-                font-size: 28px !important;
-            }
-
-            /* 表格 */
-            table {
+            body > div[style*="width: 210mm"] div[style*="display: flex"] p {
                 font-size: 12px !important;
             }
+        }
 
-            table th,
+        /* 超小屏幕 */
+        @media screen and (max-width: 480px) {
+            .page {
+                padding: 15px 10px;
+            }
+
             table td {
                 padding: 8px 6px !important;
             }
@@ -1614,6 +1628,36 @@
 
             .cover-content h2 {
                 font-size: 14px !important;
+            }
+
+            /* 独立LINE联系区块 - 超小屏幕优化 */
+            body > div[style*="width: 210mm"][style*="margin: 30px auto"] {
+                padding: 20px 15px !important;
+            }
+
+            body > div[style*="width: 210mm"] h3 {
+                font-size: 18px !important;
+            }
+
+            body > div[style*="width: 210mm"] a {
+                padding: 14px 20px !important;
+                gap: 8px !important;
+            }
+
+            body > div[style*="width: 210mm"] a i.fab {
+                font-size: 24px !important;
+            }
+
+            body > div[style*="width: 210mm"] a span {
+                font-size: 14px !important;
+            }
+
+            body > div[style*="width: 210mm"] a i.fas {
+                font-size: 14px !important;
+            }
+
+            body > div[style*="width: 210mm"] div[style*="display: flex"] p {
+                font-size: 11px !important;
             }
 
             h2 {
@@ -1700,21 +1744,30 @@
             </div>
         </div>
         
-        <!-- LINE联系按钮 - 封面页 -->
-        <div style="position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%); z-index: 10; width: 90%; max-width: 500px;">
-            <a href="https://line.me/ti/p/LEZfFFMwd2" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 12px; padding: 18px 35px; background: linear-gradient(135deg, #00B900, #00d400); border-radius: 50px; text-decoration: none; box-shadow: 0 8px 25px rgba(0, 185, 0, 0.4); transition: all 0.3s; border: 2px solid rgba(255,255,255,0.3);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 35px rgba(0, 185, 0, 0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0, 185, 0, 0.4)'">
-                <i class="fab fa-line" style="font-size: 28px; color: white;"></i>
-                <span style="color: white; font-size: 16px; font-weight: 700; letter-spacing: 0.5px;">今すぐLINEで相談する</span>
-                <i class="fas fa-arrow-right" style="font-size: 16px; color: white;"></i>
-            </a>
-            <p style="text-align: center; margin-top: 12px; color: rgba(255,255,255,0.7); font-size: 12px;">
-                <i class="fas fa-clock" style="margin-right: 5px;"></i>
-                24時間以内に返信いたします
-            </p>
-        </div>
-        
         <div class="cover-bottom">
             <p>CONFIDENTIAL — FOR PROSPECTIVE PARTNERS ONLY</p>
+        </div>
+    </div>
+
+    <!-- ========== LINE联系区块 - 独立区域 ========== -->
+    <div style="width: 210mm; margin: 30px auto; padding: 40px 50px; background: white; box-shadow: 0 10px 40px rgba(0,0,0,0.1); border-radius: 16px;">
+        <div style="text-align: center; margin-bottom: 25px;">
+            <h3 style="font-size: 24px; color: var(--primary); font-weight: 700; margin-bottom: 10px;">
+                <i class="fas fa-comments" style="color: #00B900; margin-right: 10px;"></i>
+                お気軽にご相談ください
+            </h3>
+            <p style="font-size: 14px; color: var(--text-gray);">詳しい資料や個別相談をご希望の方は、LINEでお問い合わせください</p>
+        </div>
+        <div style="max-width: 500px; margin: 0 auto;">
+            <a href="https://line.me/ti/p/LEZfFFMwd2" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 12px; padding: 20px 40px; background: linear-gradient(135deg, #00B900, #00d400); border-radius: 50px; text-decoration: none; box-shadow: 0 8px 25px rgba(0, 185, 0, 0.4); transition: all 0.3s; border: 2px solid rgba(255,255,255,0.3);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 35px rgba(0, 185, 0, 0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0, 185, 0, 0.4)'">
+                <i class="fab fa-line" style="font-size: 32px; color: white;"></i>
+                <span style="color: white; font-size: 18px; font-weight: 700; letter-spacing: 0.5px;">今すぐLINEで相談する</span>
+                <i class="fas fa-arrow-right" style="font-size: 18px; color: white;"></i>
+            </a>
+            <div style="display: flex; justify-content: center; gap: 30px; margin-top: 20px;">
+ 
+
+            </div>
         </div>
     </div>
 
